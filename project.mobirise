@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Yggdrasil",
-    "currentPage": "contact.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "mobirise5",
       "title": "Mobirise 5",
@@ -42,11 +42,11 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 43,
+    "uniqCompNum": 46,
     "versionPublish": "5.9.0",
     "screenshot": "screenshot.png",
     "favicon": false,
-    "mbrsiteDomain": "meqvd7xscq",
+    "mbrsiteDomain": "vqnlkwqaoy",
     "usedWebp": false,
     "robotsSwitcher": false,
     "sitemapSwitcher": false,
@@ -4401,10 +4401,11 @@
         }
       ]
     },
-    "page7.html": {
+    "people.html": {
       "settings": {
         "title": "People",
-        "order": "1"
+        "order": "1",
+        "meta_descr": "The team behind Yggdrasil-genome facility"
       },
       "components": [
         {
