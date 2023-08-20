@@ -3654,7 +3654,7 @@ a {
   }
 }
 .cid-tNnjyelDqY {
-  padding-top: 4rem;
+  padding-top: 3rem;
   padding-bottom: 0rem;
   background-color: #ffffff;
 }
@@ -3667,17 +3667,79 @@ a {
 .cid-tNnjyelDqY .mbr-text {
   text-align: left;
 }
-#custom-html-z {
+#custom-html-21 {
   /* Type valid CSS here */
 }
-#custom-html-z div {
+#custom-html-21 div {
   padding: 80px 0;
   color: #777;
   text-align: center;
 }
-#custom-html-z p {
+#custom-html-21 p {
   font-size: 60px;
   color: #777;
+}
+.cid-tNt11xEV32 {
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  background-color: #232323;
+}
+.cid-tNt11xEV32 .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-tNt11xEV32 .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-tNt11xEV32 .social-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cid-tNt11xEV32 .soc-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+@media (max-width: 767px) {
+  .cid-tNt11xEV32 .row {
+    text-align: center;
+  }
+  .cid-tNt11xEV32 .social-row {
+    justify-content: center;
+  }
+}
+.cid-tNt11xEV32 .list {
+  list-style: none;
+  padding-left: 0;
+  color: #bbbbbb;
+}
+@media (max-width: 991px) {
+  .cid-tNt11xEV32 .list {
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .cid-tNt11xEV32 .list {
+    margin-bottom: 0rem;
+  }
+}
+.cid-tNt11xEV32 .mbr-text {
+  color: #bbbbbb;
+}
+.cid-tNt11xEV32 .mbr-iconfont {
+  color: black;
 }
 .cid-tKtsXdyNyt {
   z-index: 1000;
