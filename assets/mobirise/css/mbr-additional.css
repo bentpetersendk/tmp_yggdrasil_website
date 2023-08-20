@@ -4652,6 +4652,11 @@ a {
 .cid-tNnoO3HPM7 .social-row .soc-item:hover .mbr-iconfont {
   color: #ffffff;
 }
+.cid-tNnoO3HPM7 .card-text,
+.cid-tNnoO3HPM7 .mbr-section-btn,
+.cid-tNnoO3HPM7 .social-row {
+  text-align: left;
+}
 .cid-tNnoPqpnZV {
   padding-top: 0rem;
   padding-bottom: 6rem;
