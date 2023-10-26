@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Yggdrasil-genome facility",
-    "currentPage": "index.html",
+    "currentPage": "funders.html",
     "theme": {
       "name": "mobirise5",
       "title": "Mobirise 5",
@@ -31,7 +31,8 @@
         "isScrollToTopButton": true
       },
       "additionalSetColors": [
-        "#edefeb"
+        "#edefeb",
+        "#f3f4f7"
       ]
     },
     "path": "@PROJECT_PATH@",
@@ -49,7 +50,7 @@
       }
     ],
     "imageResize": true,
-    "uniqCompNum": 106,
+    "uniqCompNum": 112,
     "versionPublish": "5.9.0",
     "screenshot": "screenshot.png",
     "favicon": false,
@@ -3153,21 +3154,6 @@
           "_params": {}
         },
         {
-          "_customTemplate": true,
-          "_afterNavbarItem": false,
-          "_customHTML": "<!-- Type valid HTML here -->\n\n<div>\n<iframe class=\"airtable-embed\" src=\"https://airtable.com/embed/appAREtSMEePpwH9d/shrScUuPz1NRWlPDG?backgroundColor=pinkDusty\" frameborder=\"0\" onmousewheel=\"\" width=\"100%\" height=\"400\" style=\"background: transparent; border: 1px solid #ccc;\"></iframe>\n</div>\n",
-          "_customCSS": "/* Type valid CSS here */\n\ndiv {\n  padding: 80px 0;\n  color: #777;\n  text-align: center;\n}\np {\n  font-size: 60px;\n  color: #777;\n}",
-          "alias": "code-editor",
-          "_tags": [
-            "Extension"
-          ],
-          "_name": "pro.custom-html",
-          "_sourceTheme": "mobirise5",
-          "_anchor": "custom-html-21",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
-        },
-        {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
@@ -4534,10 +4520,10 @@
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
             },
-            "& when (@bg-type = 'color')": {
+            "& when (@bg-type = \"color\")": {
               "background-color": "@bg-value"
             },
-            "& when (@bg-type = 'image')": {
+            "& when (@bg-type = \"image\")": {
               "background-image": "url(@bg-value)"
             },
             ".mbr-fallback-image.disabled": {
@@ -4555,30 +4541,29 @@
                 "background-image": "url(@fallBackImage)"
               }
             },
-            "& when (@fullWidth)": {
-              ".text-wrapper": {
-                "padding": "1rem"
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
               }
             },
-            "@media (max-width: 991px)": {
-              ".image-wrapper": {
-                "margin-bottom": "1rem"
-              }
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
             },
-            "img": {
-              "width": "100%"
-            },
-            "@media (min-width: 992px)": {
-              ".text-wrapper": {
-                "padding": "2rem"
-              }
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
             }
           },
-          "_name": "image1",
-          "_sourceTheme": "mobirise5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Description\" name=\"showDescription\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth}\">\n        <div class=\"row align-items-center\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <div class=\"image-wrapper\">\n                    <a href=\"https://www.carlsbergfondet.dk/en\" target=\"_blank\"><img src=\"@PROJECT_PATH@/assets/images/carlsbergfondet-logo-2-liner-uk-rgb-green-1244x301.png\" alt=\"Carlsberg foundation\"></a>\n                    <p class=\"mbr-description mbr-fonts-style pt-2 align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showDescription\" data-app-selector=\".mbr-description\">\n                    Image Description</p>\n                </div>\n            </div>\n            <div class=\"col-12\" mbr-class=\"{'col-lg' : !fullWidth, 'col-lg-4' : fullWidth &amp;&amp; textWidth >= 6, 'col-lg-6' : fullWidth &amp;&amp; textWidth <= 5}\">\n                <div class=\"text-wrapper\">\n                    <h3 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">\n                        <b>Carlsberg Foundation</b></h3>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                        The Yggdrasil project was created thanks to generous funding of Carlsberg Foundation Research Infrastructure Grant CF22-0680 “A Danish Reference Genome Sequencing Infrastructure”. This award to Prof Tom Gilbert. This award supports the salary of the key staff members involved in the sequencing and assembly of the genomes. </p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "tNnGPk4bZ9",
-          "_anchor": "image1-1y",
+          "_name": "article08",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article8\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"4\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"10\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#f3f4f7\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpgg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <div class=\"image-wrapper d-flex justify-content-center mb-4\">\n            <a href=\"https://www.carlsbergfondet.dk/en\" target=\"_blank\"><img mbr-if=\"showImage\" src=\"@PROJECT_PATH@/assets/images/carlsbergfondet-logo-2-liner-uk-rgb-green-2-1244x301.png\" alt=\"Carlsberg Foundation\"></a>\n          </div>\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\">\n            <b>Return policy:</b>\n          </h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Eligibility for returns</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">The Yggdrasil project was created thanks to generous funding of Carlsberg Foundation Research Infrastructure Grant CF22-0680 “A Danish Reference Genome Sequencing Infrastructure”. This award to Prof Tom Gilbert supports the salary of the key staff members involved in the sequencing and assembly of the genomes.<br><br></p>\n              </div>\n            </div>\n            \n            \n\n            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n              <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "tTO4spn2E6",
+          "_anchor": "article08-2z",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -4591,10 +4576,10 @@
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
             },
-            "& when (@bg-type = 'color')": {
+            "& when (@bg-type = \"color\")": {
               "background-color": "@bg-value"
             },
-            "& when (@bg-type = 'image')": {
+            "& when (@bg-type = \"image\")": {
               "background-image": "url(@bg-value)"
             },
             ".mbr-fallback-image.disabled": {
@@ -4612,31 +4597,29 @@
                 "background-image": "url(@fallBackImage)"
               }
             },
-            "& when (@fullWidth)": {
-              ".text-wrapper": {
-                "padding": "1rem"
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
               }
             },
-            "@media (max-width: 991px)": {
-              ".image-wrapper": {
-                "margin-bottom": "1rem"
-              }
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
             },
-            "img": {
-              "width": "100%"
-            },
-            "@media (min-width: 992px)": {
-              ".text-wrapper": {
-                "padding": "2rem"
-              }
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
             }
           },
-          "_name": "image1",
-          "_sourceTheme": "mobirise5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Description\" name=\"showDescription\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth}\">\n        <div class=\"row align-items-center\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <div class=\"image-wrapper\">\n                    <a href=\"https://ceh.ku.dk\" target=\"_blank\"><img src=\"@PROJECT_PATH@/assets/images/ceh-logo-1100x600-1-1100x600.png\" alt=\"Center for Evolutionary Hologenomics\"></a>\n                    <p class=\"mbr-description mbr-fonts-style pt-2 align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showDescription\" data-app-selector=\".mbr-description\">\n                    Image Description</p>\n                </div>\n            </div>\n            <div class=\"col-12\" mbr-class=\"{'col-lg' : !fullWidth, 'col-lg-4' : fullWidth &amp;&amp; textWidth >= 6, 'col-lg-6' : fullWidth &amp;&amp; textWidth <= 5}\">\n                <div class=\"text-wrapper\">\n                    <h3 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">\n                        <b>Center for Evolutionary Hologenomics</b></h3>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                        The Yggdrasil project is hosted at the Center for Evolutionary Hologenomics, The Globe Institute, University of Copenhagen. The Center for Evolutionary Hologenomics was funded through Danish National Research Foundation Award DNRF143 to Prof Tom Gilbert.</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_anchor": "image1-27",
-          "_isUserblock": true,
-          "_cid": "tOUWmBwj4a",
+          "_name": "article08",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article8\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"10\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#f3f4f7\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpgg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <div class=\"image-wrapper d-flex justify-content-center mb-4\">\n            <a href=\"https://ceh.ku.dk/\" target=\"_blank\"><img mbr-if=\"showImage\" src=\"@PROJECT_PATH@/assets/images/ceh-logo-1100x600-3-1100x600.png\" alt=\"Center for Evolutionary Hologenomics\"></a>\n          </div>\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\">\n            <b>Return policy:</b>\n          </h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Eligibility for returns</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">The Yggdrasil project is hosted at the Center for Evolutionary Hologenomics, The Globe Institute, University of Copenhagen. The Center for Evolutionary Hologenomics was funded through Danish National Research Foundation Award DNRF143 to Prof Tom Gilbert.<br></p>\n              </div>\n            </div>\n            \n            \n\n            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n              <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "tTO549faOh",
+          "_anchor": "article08-30",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -4649,10 +4632,10 @@
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
             },
-            "& when (@bg-type = 'color')": {
+            "& when (@bg-type = \"color\")": {
               "background-color": "@bg-value"
             },
-            "& when (@bg-type = 'image')": {
+            "& when (@bg-type = \"image\")": {
               "background-image": "url(@bg-value)"
             },
             ".mbr-fallback-image.disabled": {
@@ -4670,30 +4653,29 @@
                 "background-image": "url(@fallBackImage)"
               }
             },
-            "& when (@fullWidth)": {
-              ".text-wrapper": {
-                "padding": "1rem"
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
               }
             },
-            "@media (max-width: 991px)": {
-              ".image-wrapper": {
-                "margin-bottom": "1rem"
-              }
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
             },
-            "img": {
-              "width": "100%"
-            },
-            "@media (min-width: 992px)": {
-              ".text-wrapper": {
-                "padding": "2rem"
-              }
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
             }
           },
-          "_name": "image1",
-          "_sourceTheme": "mobirise5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Description\" name=\"showDescription\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth}\">\n        <div class=\"row align-items-center\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <div class=\"image-wrapper\">\n                    <a href=\"https://novonordiskfonden.dk/en/\" target=\"_blank\"><img src=\"@PROJECT_PATH@/assets/images/nnf-int-logo-blue-rgb-solid-1256x391.png\" alt=\"novo nordisk foundation\"></a>\n                    <p class=\"mbr-description mbr-fonts-style pt-2 align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showDescription\" data-app-selector=\".mbr-description\">\n                    Image Description</p>\n                </div>\n            </div>\n            <div class=\"col-12\" mbr-class=\"{'col-lg' : !fullWidth, 'col-lg-4' : fullWidth &amp;&amp; textWidth >= 6, 'col-lg-6' : fullWidth &amp;&amp; textWidth <= 5}\">\n                <div class=\"text-wrapper\">\n                    <h3 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">\n                        <b>novo nordisk foundation</b></h3>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                        Text about NNF's role</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "tNnz3zd1Am",
-          "_anchor": "image1-1u",
+          "_name": "article08",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article8\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"10\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#f3f4f7\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpgg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <div class=\"image-wrapper d-flex justify-content-center mb-4\">\n            <a href=\"https://novonordiskfonden.dk/en/\" target=\"_blank\"><img mbr-if=\"showImage\" src=\"@PROJECT_PATH@/assets/images/nnf-int-logo-blue-rgb-solid-1-1256x391.png\" alt=\"novo nordisk foundation\"></a>\n          </div>\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\">\n            <b>Return policy:</b>\n          </h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Eligibility for returns</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Text about NNF's role<br></p>\n              </div>\n            </div>\n            \n            \n\n            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n              <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "tTO54YYAhv",
+          "_anchor": "article08-31",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -4706,10 +4688,10 @@
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
             },
-            "& when (@bg-type = 'color')": {
+            "& when (@bg-type = \"color\")": {
               "background-color": "@bg-value"
             },
-            "& when (@bg-type = 'image')": {
+            "& when (@bg-type = \"image\")": {
               "background-image": "url(@bg-value)"
             },
             ".mbr-fallback-image.disabled": {
@@ -4727,30 +4709,29 @@
                 "background-image": "url(@fallBackImage)"
               }
             },
-            "& when (@fullWidth)": {
-              ".text-wrapper": {
-                "padding": "1rem"
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
               }
             },
-            "@media (max-width: 991px)": {
-              ".image-wrapper": {
-                "margin-bottom": "1rem"
-              }
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
             },
-            "img": {
-              "width": "100%"
-            },
-            "@media (min-width: 992px)": {
-              ".text-wrapper": {
-                "padding": "2rem"
-              }
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
             }
           },
-          "_name": "image1",
-          "_sourceTheme": "mobirise5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Description\" name=\"showDescription\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div mbr-class=\"{'container': !fullWidth}\">\n        <div class=\"row align-items-center\">\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <div class=\"image-wrapper\">\n                    <a href=\"https://www.ku.dk/english/\" target=\"_blank\"><img src=\"@PROJECT_PATH@/assets/images/ku-logo-uk-hh-1256x468.png\" alt=\"University of Copenhagen\"></a>\n                    <p class=\"mbr-description mbr-fonts-style pt-2 align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showDescription\" data-app-selector=\".mbr-description\">\n                    Image Description</p>\n                </div>\n            </div>\n            <div class=\"col-12\" mbr-class=\"{'col-lg' : !fullWidth, 'col-lg-4' : fullWidth &amp;&amp; textWidth >= 6, 'col-lg-6' : fullWidth &amp;&amp; textWidth <= 5}\">\n                <div class=\"text-wrapper\">\n                    <h3 class=\"mbr-section-title mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">\n                        <b>University of Copenhagen</b></h3>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                        Text about UCPH's role</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "tNnxiFdawa",
-          "_anchor": "image1-1s",
+          "_name": "article08",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article8\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"10\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#f3f4f7\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpgg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <div class=\"image-wrapper d-flex justify-content-center mb-4\">\n            <a href=\"https://www.ku.dk/english/\" target=\"_blank\"><img mbr-if=\"showImage\" src=\"@PROJECT_PATH@/assets/images/ku-logo-uk-hh-1-1256x468.png\" alt=\"University of Copenhagen\"></a>\n          </div>\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\">\n            <b>Return policy:</b>\n          </h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Eligibility for returns</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Text about UCPH's role<br></p>\n              </div>\n            </div>\n            \n            \n\n            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n              <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "tTO55OhxI1",
+          "_anchor": "article08-32",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
